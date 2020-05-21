@@ -31,8 +31,8 @@ class menuPage extends StatelessWidget{
   );
   final type1 = Material(
     child: Container(
-      height: 100,
-      width: 500,
+      height: 120,
+      width: 600,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
           image: DecorationImage(
@@ -44,7 +44,7 @@ class menuPage extends StatelessWidget{
       child: MaterialButton(
         onPressed: (){},
         child: Text(
-          'Legend',
+          'Advanced',
           style: TextStyle(
               fontSize: 40.0,
               color: Colors.white
@@ -56,8 +56,8 @@ class menuPage extends StatelessWidget{
 
   final type2 = Material(
     child: Container(
-      height: 100,
-      width: 500,
+      height: 120,
+      width: 600,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.0),
         image: DecorationImage(
@@ -69,7 +69,7 @@ class menuPage extends StatelessWidget{
       child: MaterialButton(
         onPressed: (){},
         child: Text(
-          'Casual',
+          'Intermediate',
           style: TextStyle(
               fontSize: 40.0,
               color: Colors.white
@@ -81,8 +81,8 @@ class menuPage extends StatelessWidget{
 
   final type3 = Material(
     child: Container(
-      height: 100,
-      width: 500,
+      height: 120,//100
+      width: 600,//500
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.0),
         image: DecorationImage(
@@ -94,7 +94,7 @@ class menuPage extends StatelessWidget{
       child: MaterialButton(
         onPressed: (){},
         child: Text(
-          'Slow',
+          'Beginner',
           style: TextStyle(
               fontSize: 40.0,
               color: Colors.white
@@ -107,30 +107,54 @@ class menuPage extends StatelessWidget{
   Widget build(BuildContext context){
     return Scaffold(
       backgroundColor: Colors.white,
-
+      appBar: new AppBar(
+        iconTheme: new IconThemeData(color: Colors.black),
+        backgroundColor: Colors.white,
+        title: new Title(color: Colors.black, child:
+          Text(
+              'GymTastic',
+              style: TextStyle(
+                fontSize: 18.0,
+                color: Colors.black) ),
+      ),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            new UserAccountsDrawerHeader(
+              accountName: new Text('User'),
+              accountEmail: new Text('email@user.com'),
+              currentAccountPicture : new CircleAvatar(
+                backgroundImage: AssetImage('assets/images/user.png'),
+            )
+            )
+          ]
+        )
+      ),
       body: Center(
         child: Container(
-          padding: const EdgeInsets.all(36.0),
+          padding: const EdgeInsets.all(5.0),//36
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              iconMenu,
-              Container(
-                margin: const EdgeInsets.only(left: 1000.0),
-              ),
+              //iconMenu,
+              //Container(
+              //  margin: const EdgeInsets.only(left: 1000.0),
+              //),
               titleField,
               subtitleField,
               Container(
-                margin: const EdgeInsets.only(top: 140.0),
+                //height: 120.0,
+                margin: const EdgeInsets.only(top: 60.0),//140
               ),
               type1,
               Container(
-                margin: const EdgeInsets.only(top: 20.0),
+                margin: const EdgeInsets.only(top: 10.0),
               ),
               type2,
               Container(
-                margin: const EdgeInsets.only(top: 20.0),
+                margin: const EdgeInsets.only(top: 10.0),
               ),
               type3,
             ],
