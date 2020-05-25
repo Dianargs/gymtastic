@@ -126,8 +126,35 @@ class menuPage extends StatelessWidget{
               accountEmail: new Text('email@user.com'),
               currentAccountPicture : new CircleAvatar(
                 backgroundImage: AssetImage('assets/images/user.png'),
-            )
-            )
+            ),
+              decoration: BoxDecoration(
+                  //borderRadius: BorderRadius.all(100.0),
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      Color(0xFFF50057),
+                      Color(0xFF2979FF),
+                    ],
+                  )
+              ),
+            ),
+            new ListTile(
+              title: Text('Settings'),
+              trailing: Icon(Icons.settings)
+            ),
+            new ListTile(
+                title: Text('History'),
+                trailing: Icon(Icons.history)
+            ),
+            new ListTile(
+                title: Text('Help'),
+                trailing: Icon(Icons.help_outline)
+            ),
+            new ListTile(
+                title: Text('Log out'),
+                trailing: Icon(Icons.exit_to_app)
+            ),
           ]
         )
       ),

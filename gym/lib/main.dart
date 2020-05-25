@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gym/newAccount.dart';
 import 'package:gym/Login.dart';
 import 'package:gym/menu.dart';
-
+import 'package:gym/settings.dart';
+import 'package:gym/Beginner.dart';
 //other pages
 import 'Login.dart';
 
@@ -19,8 +20,10 @@ class MyApp extends StatelessWidget {
         '/LoginScreen': (BuildContext context) => new LoginScreen(),
         '/newAccount' : (BuildContext context) => new newAccount(),
         '/menuPage' : (BuildContext context) => new menuPage(),
+        '/settings': (BuildContext context) => new settings(),
+        '/Beginner': (BuildContext context) => new Beginner()
       },
-      home: new LoginScreen(),
+      home: new Beginner(),
     );
   }
 }
