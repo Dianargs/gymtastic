@@ -50,14 +50,14 @@ class Beginner extends StatelessWidget{
   final titleField = Text(
     "Choose your workout",
     style: TextStyle(
-        fontSize: 30.0,
+        fontSize: 40.0,
         color: Color(0xFFF50057)
     ),
   );
   final subtitleField = Text(
-    "Request a personal trainer to help you workout",
+    "Request a personal trainer to help you!",
     style: TextStyle(
-        fontSize: 10.0,
+        fontSize: 20.0,
         color: Color(0xFF2979FF)
     ),
   );

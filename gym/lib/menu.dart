@@ -2,9 +2,14 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:gym/Beginner.dart';
+import 'package:gym/Intermediate.dart';
+import 'package:gym/settings.dart';
+import 'package:gym/Advanced.dart';
+import 'package:gym/Login.dart';
+
 
 class menuPage extends StatelessWidget{
-
 
   final iconMenu  = Row(
     children: <Widget>[
@@ -29,80 +34,8 @@ class menuPage extends StatelessWidget{
         color: Color(0xFF2979FF)
     ),
   );
-  final type1 = Material(
-    child: Container(
-      height: 120,
-      width: 600,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.0),
-          image: DecorationImage(
-            image: AssetImage("assets/images/legend.jpg"),
-            fit: BoxFit.cover,
-            colorFilter: ColorFilter.mode(Colors.grey.withOpacity(0.8), BlendMode.darken),
-          ),
-      ),
-      child: MaterialButton(
-        onPressed: (){},
-        child: Text(
-          'Advanced',
-          style: TextStyle(
-              fontSize: 40.0,
-              color: Colors.white
-          ),
-        ),
-    ),
-    ),
-  );
 
-  final type2 = Material(
-    child: Container(
-      height: 120,
-      width: 600,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10.0),
-        image: DecorationImage(
-          image: AssetImage("assets/images/casual.jpg"),
-          fit: BoxFit.cover,
-          colorFilter: ColorFilter.mode(Colors.grey.withOpacity(0.8), BlendMode.darken),
-        ),
-      ),
-      child: MaterialButton(
-        onPressed: (){},
-        child: Text(
-          'Intermediate',
-          style: TextStyle(
-              fontSize: 40.0,
-              color: Colors.white
-          ),
-        ),
-      ),
-    ),
-  );
 
-  final type3 = Material(
-    child: Container(
-      height: 120,//100
-      width: 600,//500
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10.0),
-        image: DecorationImage(
-          image: AssetImage("assets/images/slow.jpg"),
-          fit: BoxFit.cover,
-          colorFilter: ColorFilter.mode(Colors.grey.withOpacity(0.8), BlendMode.darken),
-        ),
-      ),
-      child: MaterialButton(
-        onPressed: (){},
-        child: Text(
-          'Beginner',
-          style: TextStyle(
-              fontSize: 40.0,
-              color: Colors.white
-          ),
-        ),
-      ),
-    ),
-  );
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -141,7 +74,13 @@ class menuPage extends StatelessWidget{
             ),
             new ListTile(
               title: Text('Settings'),
-              trailing: Icon(Icons.settings)
+              trailing: Icon(Icons.settings),
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) =>  settings()),
+                );
+              },
             ),
             new ListTile(
                 title: Text('History'),
@@ -153,7 +92,13 @@ class menuPage extends StatelessWidget{
             ),
             new ListTile(
                 title: Text('Log out'),
-                trailing: Icon(Icons.exit_to_app)
+                trailing: Icon(Icons.exit_to_app),
+                onTap:(){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) =>  LoginScreen()),
+                  );
+                },
             ),
           ]
         )
@@ -175,19 +120,122 @@ class menuPage extends StatelessWidget{
                 //height: 120.0,
                 margin: const EdgeInsets.only(top: 60.0),//140
               ),
-              type1,
+              EAdvanced(),
+
               Container(
                 margin: const EdgeInsets.only(top: 10.0),
               ),
-              type2,
+              EIntermediate(),
               Container(
                 margin: const EdgeInsets.only(top: 10.0),
               ),
-              type3,
+              EBeginner(),
             ],
           ),
         ),
       ),
     );
+  }
+}
+class EAdvanced extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Material(
+      child: Container(
+        height: 120,
+        width: 600,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10.0),
+          image: DecorationImage(
+            image: AssetImage("assets/images/legend.jpg"),
+            fit: BoxFit.cover,
+            colorFilter: ColorFilter.mode(Colors.grey.withOpacity(0.8), BlendMode.darken),
+          ),
+        ),
+        child: MaterialButton(
+          onPressed: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) =>  Advanced()),
+            );
+        },
+          child: Text(
+            'Advanced',
+            style: TextStyle(
+                fontSize: 40.0,
+                color: Colors.white
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+class EIntermediate extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Material(
+      child: Container(
+        height: 120,
+        width: 600,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10.0),
+          image: DecorationImage(
+            image: AssetImage("assets/images/casual.jpg"),
+            fit: BoxFit.cover,
+            colorFilter: ColorFilter.mode(Colors.grey.withOpacity(0.8), BlendMode.darken),
+          ),
+        ),
+        child: MaterialButton(
+          onPressed: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) =>  Intermediate()),
+            );
+          },
+          child: Text(
+            'Intermediate',
+            style: TextStyle(
+                fontSize: 40.0,
+                color: Colors.white
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+class EBeginner extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+      return Material(
+        child: Container(
+          height: 120,//100
+          width: 600,//500
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10.0),
+            image: DecorationImage(
+              image: AssetImage("assets/images/slow.jpg"),
+              fit: BoxFit.cover,
+              colorFilter: ColorFilter.mode(Colors.grey.withOpacity(0.8), BlendMode.darken),
+            ),
+          ),
+          child: MaterialButton(
+            onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) =>  Beginner()),
+              );
+            },
+            child: Text(
+              'Beginner',
+              style: TextStyle(
+                  fontSize: 40.0,
+                  color: Colors.white
+              ),
+            ),
+          ),
+        ),
+      );
   }
 }
