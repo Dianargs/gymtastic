@@ -9,6 +9,7 @@ import 'package:gym/menu.dart';
 import 'package:gym/settings.dart';
 import 'package:gym/Advanced.dart';
 import 'package:gym/Login.dart';
+import 'package:gym/ClientList.dart';
 
 class payCheck extends StatelessWidget{
   final titleField = Text(
@@ -92,17 +93,21 @@ class payCheck extends StatelessWidget{
                     },
                   ),
                   new ListTile(
-                    title: Text('PayCheck'),
+                    title: Text('PayCheck',
+                      style: TextStyle(color: Color(0xFFF50057))
+                    ),
                     trailing: Icon(Icons.attach_money),
                     onTap: (){
-
                     },
                   ),
                   new ListTile(
                     title: Text('List of Clients'),
                     trailing: Icon(Icons.person_outline),
                     onTap: (){
-
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) =>  ClientList()),
+                      );
                     },
                   ),
                   new ListTile(
