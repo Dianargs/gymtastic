@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:gym/Beginner.dart';
 import 'package:gym/Intermediate.dart';
-import 'package:gym/ptAccount.dart';
+import 'package:gym/menu.dart';
 import 'package:gym/settings.dart';
 import 'package:gym/Advanced.dart';
 import 'package:gym/Login.dart';
 
 
-class menuPage extends StatelessWidget{
+class ptAccount extends StatelessWidget{
 
   final iconMenu  = Row(
     children: <Widget>[
@@ -22,14 +22,14 @@ class menuPage extends StatelessWidget{
   );
   //titulo
   final titleField = Text(
-    "Welcome Back!",
+    "Personal Trainer",
     style: TextStyle(
         fontSize: 40.0,
         color: Color(0xFFF50057)
     ),
   );
   final subtitleField = Text(
-    "How are you feeling today?",
+    "What do you want to do today?",
     style: TextStyle(
         fontSize: 20.0,
         color: Color(0xFF2979FF)
@@ -39,7 +39,6 @@ class menuPage extends StatelessWidget{
 
   @override
   Widget build(BuildContext context){
-    TextStyle applyStyle  = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0,);
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: new AppBar(
@@ -89,17 +88,33 @@ class menuPage extends StatelessWidget{
                     trailing: Icon(Icons.history)
                 ),
                 new ListTile(
-                  title: Text('Personal Trainer Account'),
+                  title: Text('Leave Personal Account'),
                   trailing: Icon(Icons.person),
                   onTap: (){
-                    _showDialog(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =>  menuPage()),
+                    );
+                  },
+                ),
+                new ListTile(
+                  title: Text('PayCheck'),
+                  trailing: Icon(Icons.attach_money),
+                  onTap: (){
+
+                  },
+                ),
+                new ListTile(
+                  title: Text('List of Clients'),
+                  trailing: Icon(Icons.person_outline),
+                  onTap: (){
+
                   },
                 ),
                 new ListTile(
                     title: Text('Help'),
                     trailing: Icon(Icons.help_outline)
                 ),
-
                 new ListTile(
                   title: Text('Log out'),
                   trailing: Icon(Icons.exit_to_app),
@@ -110,40 +125,6 @@ class menuPage extends StatelessWidget{
                     );
                   },
                 ),
-                new Container(
-                  margin: const EdgeInsets.only(top:100.0),
-                ),
-                new ListTile(
-                    title: Text('Become a trainer',
-                    style: applyStyle,
-                    ),
-                    leading: Icon(Icons.fitness_center, color:Color(0xFFF50057),size: 40.0),
-                ),
-                new ListTile(
-                    leading: GestureDetector(
-                      child: Container(
-                        margin: const EdgeInsets.only(left: 50.0),
-                        child: new MaterialButton(
-                          onPressed: () {},
-                          child: Text('Apply here'),
-                        ),
-                        height: 35,
-                        width: 170,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(100.0),
-                            gradient: LinearGradient(
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                              colors: [
-                                Color(0xFFF50057),
-                                Color(0xFF2979FF),
-                              ],
-                            )
-                        ),
-                      ),
-                    ),
-
-                )
               ]
           )
       ),
@@ -164,16 +145,16 @@ class menuPage extends StatelessWidget{
                 //height: 120.0,
                 margin: const EdgeInsets.only(top: 60.0),//140
               ),
-              EAdvanced(),
+              Classes(),
 
               Container(
                 margin: const EdgeInsets.only(top: 10.0),
               ),
-              EIntermediate(),
+             singleClass(),
               Container(
                 margin: const EdgeInsets.only(top: 10.0),
               ),
-              EBeginner(),
+              helper(),
             ],
           ),
         ),
@@ -181,7 +162,7 @@ class menuPage extends StatelessWidget{
     );
   }
 }
-class EAdvanced extends StatelessWidget{
+class Classes extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Material(
@@ -191,20 +172,20 @@ class EAdvanced extends StatelessWidget{
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
           image: DecorationImage(
-            image: AssetImage("assets/images/legend.jpg"),
+            image: AssetImage("assets/images/Classes.jpg"),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(Colors.grey.withOpacity(0.8), BlendMode.darken),
           ),
         ),
         child: MaterialButton(
           onPressed: (){
-            Navigator.push(
+           /* Navigator.push(
               context,
               MaterialPageRoute(builder: (context) =>  Advanced()),
-            );
+            );*/
           },
           child: Text(
-            'Advanced',
+            'Give a class!',
             style: TextStyle(
                 fontSize: 40.0,
                 color: Colors.white
@@ -215,7 +196,7 @@ class EAdvanced extends StatelessWidget{
     );
   }
 }
-class EIntermediate extends StatelessWidget{
+class singleClass extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Material(
@@ -225,20 +206,20 @@ class EIntermediate extends StatelessWidget{
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
           image: DecorationImage(
-            image: AssetImage("assets/images/casual.jpg"),
+            image: AssetImage("assets/images/singleClasses.jpg"),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(Colors.grey.withOpacity(0.8), BlendMode.darken),
           ),
         ),
         child: MaterialButton(
           onPressed: (){
-            Navigator.push(
+           /* Navigator.push(
               context,
               MaterialPageRoute(builder: (context) =>  Intermediate()),
-            );
+            );*/
           },
           child: Text(
-            'Intermediate',
+            'One o One',
             style: TextStyle(
                 fontSize: 40.0,
                 color: Colors.white
@@ -249,7 +230,7 @@ class EIntermediate extends StatelessWidget{
     );
   }
 }
-class EBeginner extends StatelessWidget{
+class helper extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Material(
@@ -259,20 +240,20 @@ class EBeginner extends StatelessWidget{
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
           image: DecorationImage(
-            image: AssetImage("assets/images/slow.jpg"),
+            image: AssetImage("assets/images/Help.jpg"),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(Colors.grey.withOpacity(0.8), BlendMode.darken),
           ),
         ),
         child: MaterialButton(
           onPressed: (){
-            Navigator.push(
+           /* Navigator.push(
               context,
               MaterialPageRoute(builder: (context) =>  Beginner()),
-            );
+            );*/
           },
           child: Text(
-            'Beginner',
+            'Help Someone',
             style: TextStyle(
                 fontSize: 40.0,
                 color: Colors.white
@@ -282,47 +263,4 @@ class EBeginner extends StatelessWidget{
       ),
     );
   }
-}
-@override
-void _showDialog(BuildContext context) {
-  // flutter defined function
-  TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
-  showDialog(context: context,
-    builder: (BuildContext context) {
-      // return object of type Dialog
-      return AlertDialog(
-        title: new Text("Welcome back, Personal Trainer"),
-        content: TextField(
-          obscureText: true,
-          style: style,
-          decoration: InputDecoration(
-            contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-            hintText: "Password",
-            prefixIcon: const Icon(
-              Icons.lock,
-            ),
-          ),
-        ),
-
-        actions: <Widget>[
-          // usually buttons at the bottom of the dialog
-          new FlatButton(
-            child: new Text("Done"),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) =>  ptAccount()),
-              );
-            },
-          ),
-          new FlatButton(
-            child: new Text("Cancel"),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
-        ],
-      );
-    },
-  );
 }

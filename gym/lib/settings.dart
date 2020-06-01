@@ -84,35 +84,6 @@ class settings extends StatelessWidget{
                      ),
                   ),
                  new ListTile(
-                     title: Text('Help and support'),
-                     leading: Icon(Icons.help),
-                     trailing: new RaisedButton(onPressed: () {},
-                        child: Text('Learn more'),
-                        color: Color(0xFFFAFAFA),
-                  ),
-                 ),
-                 new ListTile(
-                     title: Text('Become a trainer'),
-                     leading: Icon(Icons.fitness_center),
-                      trailing: Container(
-                        child: new MaterialButton(onPressed: () {},
-                        child: Text('Apply here')),
-                        height: 35,
-                        width: 110,
-                        decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(100.0),
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            Color(0xFFF50057),
-                            Color(0xFF2979FF),
-                          ],
-                      )
-                  ),
-                )
-              ),
-                  new ListTile(
                     title: Container(
 
                       height: 200,
