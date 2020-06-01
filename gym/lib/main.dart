@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gym/Advanced.dart';
+import 'package:gym/helpClient.dart';
 import 'package:gym/newAccount.dart';
 import 'package:gym/Login.dart';
 import 'package:gym/menu.dart';
@@ -32,7 +33,8 @@ class MyApp extends StatelessWidget {
         '/ptAccount' : (BuildContext context) => new ptAccount(),
         '/ClientList' : (BuildContext context) => new ClientList(),
         '/payCheck' : (BuildContext context) => new payCheck(),
-        '/giveClass' : (BuildContext context) => new giveClass()
+        '/giveClass' : (BuildContext context) => new giveClass(),
+        '/helpClient' : (BuildContext context) => new helpClient()
       },
       home: new LoginScreen(),
     );
