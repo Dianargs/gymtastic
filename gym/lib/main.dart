@@ -9,6 +9,7 @@ import 'package:gym/Beginner.dart';
 import 'package:gym/Intermediate.dart';
 import 'package:gym/ClientList.dart';
 import 'package:gym/payCheck.dart';
+import 'package:gym/giveClass.dart';
 import 'Login.dart';
 
 void main() {
@@ -30,7 +31,8 @@ class MyApp extends StatelessWidget {
         '/Advanced': (BuildContext context) => new Advanced(),
         '/ptAccount' : (BuildContext context) => new ptAccount(),
         '/ClientList' : (BuildContext context) => new ClientList(),
-        '/payCheck' : (BuildContext context) => new payCheck()
+        '/payCheck' : (BuildContext context) => new payCheck(),
+        '/giveClass' : (BuildContext context) => new giveClass()
       },
       home: new LoginScreen(),
     );
