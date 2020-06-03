@@ -14,6 +14,7 @@ import 'package:gym/giveClass.dart';
 import 'package:gym/help_faq.dart';
 import 'package:gym/History.dart';
 import 'package:gym/History_personal_trainer.dart';
+import 'package:gym/One.dart';
 import 'Login.dart';
 
 void main() {
@@ -40,7 +41,8 @@ class MyApp extends StatelessWidget {
         '/helpClient' : (BuildContext context) => new helpClient(),
         '/HELP_faq' : (BuildContext context) => new HELP_faq(),
         '/History' : (BuildContext context) => new History(),
-        '/History_personal_trainer ' : (BuildContext context) => new History_personal_trainer()
+        '/History_personal_trainer ' : (BuildContext context) => new History_personal_trainer(),
+        '/One' : (BuildContext context) => new One()
       },
       home: new LoginScreen(),
     );

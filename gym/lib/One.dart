@@ -1,47 +1,28 @@
-import 'dart:ui';
-
-import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:gym/menu.dart';
+import 'package:flutter/material.dart';
+import 'package:gym/payCheck.dart';
 import 'package:gym/settings.dart';
+import 'package:gym/menu.dart';
 import 'package:gym/Login.dart';
 import 'package:gym/ClientList.dart';
-import 'package:gym/payCheck.dart';
-import 'package:gym/giveClass.dart';
-import 'package:gym/helpClient.dart';
 import 'package:gym/help_faq.dart';
-import 'package:gym/History_personal_trainer.dart';
-import 'package:gym/One.dart';
+import 'package:gym/History.dart';
 
-class ptAccount extends StatelessWidget{
+class One extends StatelessWidget{
 
-  final iconMenu  = Row(
-    children: <Widget>[
-      Icon(
-        Icons.dehaze,
-        color: Colors.black,
-      )
-    ],
-  );
-  //titulo
   final titleField = Text(
-    "Personal Trainer",
+    "Online Class Live",
     style: TextStyle(
-        fontSize: 40.0,
+        fontSize: 25.0,
         color: Color(0xFFF50057)
     ),
   );
-  final subtitleField = Text(
-    "What do you want to do today?",
-    style: TextStyle(
-        fontSize: 20.0,
-        color: Color(0xFF2979FF)
-    ),
-  );
-
 
   @override
   Widget build(BuildContext context){
+
+    TextStyle applyStyle  = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
+    Image img = Image.asset(('assets/images/singleClass.png'));
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: new AppBar(
@@ -87,12 +68,12 @@ class ptAccount extends StatelessWidget{
                   },
                 ),
                 new ListTile(
-                    title: Text('History'),
-                    trailing: Icon(Icons.history),
+                  title: Text('History'),
+                  trailing: Icon(Icons.history),
                   onTap: (){
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) =>  History_personal_trainer()),
+                      MaterialPageRoute(builder: (context) =>  History()),
                     );
                   },
                 ),
@@ -117,7 +98,9 @@ class ptAccount extends StatelessWidget{
                   },
                 ),
                 new ListTile(
-                  title: Text('List of Clients'),
+                  title: Text('List of Clients',
+                    style: TextStyle(color: Color(0xFFF50057)),
+                  ),
                   trailing: Icon(Icons.person_outline),
                   onTap: (){
                     Navigator.push(
@@ -127,8 +110,8 @@ class ptAccount extends StatelessWidget{
                   },
                 ),
                 new ListTile(
-                    title: Text('Help'),
-                    trailing: Icon(Icons.help_outline),
+                  title: Text('Help'),
+                  trailing: Icon(Icons.help_outline),
                   onTap: (){
                     Navigator.push(
                       context,
@@ -136,6 +119,7 @@ class ptAccount extends StatelessWidget{
                     );
                   },
                 ),
+
                 new ListTile(
                   title: Text('Log out'),
                   trailing: Icon(Icons.exit_to_app),
@@ -146,6 +130,40 @@ class ptAccount extends StatelessWidget{
                     );
                   },
                 ),
+                new Container(
+                  margin: const EdgeInsets.only(top:100.0),
+                ),
+                new ListTile(
+                  title: Text('Become a trainer',
+                    style: applyStyle,
+                  ),
+                  leading: Icon(Icons.fitness_center, color:Color(0xFFF50057),size: 40.0),
+                ),
+                new ListTile(
+                  leading: GestureDetector(
+                    child: Container(
+                      margin: const EdgeInsets.only(left: 50.0),
+                      child: new MaterialButton(
+                        onPressed: () {},
+                        child: Text('Apply here'),
+                      ),
+                      height: 35,
+                      width: 170,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(100.0),
+                          gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              Color(0xFFF50057),
+                              Color(0xFF2979FF),
+                            ],
+                          )
+                      ),
+                    ),
+                  ),
+
+                )
               ]
           )
       ),
@@ -156,131 +174,36 @@ class ptAccount extends StatelessWidget{
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              //iconMenu,
-              //Container(
-              //  margin: const EdgeInsets.only(left: 1000.0),
-              //),
-              titleField,
-              subtitleField,
-              Container(
-                //height: 120.0,
-                margin: const EdgeInsets.only(top: 60.0),//140
-              ),
-              Classes(),
 
+              titleField,
+
+              img,
+              viewClient(),
               Container(
                 margin: const EdgeInsets.only(top: 10.0),
               ),
-             singleClass(),
-              Container(
-                margin: const EdgeInsets.only(top: 10.0),
-              ),
-              helper(),
+
             ],
           ),
         ),
       ),
+
     );
   }
 }
-class Classes extends StatelessWidget{
+class viewClient extends StatelessWidget{
   @override
-  Widget build(BuildContext context){
-    return Material(
-      child: Container(
-        height: 120,
-        width: 600,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.0),
-          image: DecorationImage(
-            image: AssetImage("assets/images/Classes.jpg"),
-            fit: BoxFit.cover,
-            colorFilter: ColorFilter.mode(Colors.grey.withOpacity(0.8), BlendMode.darken),
+  Widget build(BuildContext context) {
+    return Card(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          const ListTile(
+            leading: Icon(Icons.person_outline, size: 20),
+            title: Text('You are giving a class to:'),
+            subtitle: Text('Joana Rodrigues         UPPER_BODY'),
           ),
-        ),
-        child: MaterialButton(
-          onPressed: (){
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) =>  giveClass()),
-            );
-          },
-          child: Text(
-            'Give a class!',
-            style: TextStyle(
-                fontSize: 40.0,
-                color: Colors.white
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-class singleClass extends StatelessWidget{
-  @override
-  Widget build(BuildContext context){
-    return Material(
-      child: Container(
-        height: 120,
-        width: 600,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.0),
-          image: DecorationImage(
-            image: AssetImage("assets/images/singleClasses.jpg"),
-            fit: BoxFit.cover,
-            colorFilter: ColorFilter.mode(Colors.grey.withOpacity(0.8), BlendMode.darken),
-          ),
-        ),
-        child: MaterialButton(
-          onPressed: (){
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) =>  One()),
-            );
-          },
-          child: Text(
-            'One on One',
-            style: TextStyle(
-                fontSize: 40.0,
-                color: Colors.white
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-class helper extends StatelessWidget{
-  @override
-  Widget build(BuildContext context){
-    return Material(
-      child: Container(
-        height: 120,//100
-        width: 600,//500
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.0),
-          image: DecorationImage(
-            image: AssetImage("assets/images/Help.jpg"),
-            fit: BoxFit.cover,
-            colorFilter: ColorFilter.mode(Colors.grey.withOpacity(0.8), BlendMode.darken),
-          ),
-        ),
-        child: MaterialButton(
-          onPressed: (){
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) =>  helpClient()),
-            );
-          },
-          child: Text(
-            'Help Someone',
-            style: TextStyle(
-                fontSize: 40.0,
-                color: Colors.white
-            ),
-          ),
-        ),
+        ],
       ),
     );
   }

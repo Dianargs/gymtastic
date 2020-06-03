@@ -5,7 +5,6 @@ import 'package:flutter/cupertino.dart';
 
 class HELP_faq extends StatelessWidget{
 
-
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -57,7 +56,6 @@ class HELP_faq extends StatelessWidget{
           ),
           new ListTile(
               title: Container(
-
                   height: 200,
                   width: 20,
                   child: Column(
@@ -67,7 +65,6 @@ class HELP_faq extends StatelessWidget{
                         SizedBox(
                           child:  Image.asset(
                             "assets/images/logo.png",
-                            //fit: BoxFit.,
                           ),
                         ),
                       ]
@@ -77,20 +74,7 @@ class HELP_faq extends StatelessWidget{
           ),
         ],
       ),
-
-
-
     );
-    //SizedBox(
-    //  child:  Image.asset(
-    //    "assets/images/logo.png",
-    //    fit: BoxFit.contain,
-    //  ),
-    //),
-    //]
-    //)
-
-
 
   }
 }
