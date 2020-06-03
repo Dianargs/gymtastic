@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gym/History_personal_trainer.dart';
 import 'package:gym/payCheck.dart';
 import 'package:gym/settings.dart';
 import 'package:gym/menu.dart';
 import 'package:gym/Login.dart';
+import 'package:gym/help_faq.dart';
 
 class ClientList extends StatelessWidget{
 
@@ -66,7 +68,13 @@ class ClientList extends StatelessWidget{
                 ),
                 new ListTile(
                     title: Text('History'),
-                    trailing: Icon(Icons.history)
+                    trailing: Icon(Icons.history),
+                  onTap: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =>  History_personal_trainer()),
+                    );
+                  },
                 ),
                 new ListTile(
                   title: Text('Leave Personal Account'),
@@ -102,7 +110,13 @@ class ClientList extends StatelessWidget{
                 ),
                 new ListTile(
                     title: Text('Help'),
-                    trailing: Icon(Icons.help_outline)
+                    trailing: Icon(Icons.help_outline),
+                  onTap: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =>  HELP_faq()),
+                    );
+                  },
                 ),
 
                 new ListTile(

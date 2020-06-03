@@ -2,7 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:gym/PersonalTrainer.dart';
 
 class HELP_faq extends StatelessWidget{
 

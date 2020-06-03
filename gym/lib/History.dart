@@ -94,7 +94,7 @@ class History extends StatelessWidget{
               subtitleField,
               Container(
                 //height: 120.0,
-                margin: const EdgeInsets.only(top: 60.0),//140
+                margin: const EdgeInsets.only(top: 20.0),//140
               ),
               Material(
                 child: Container(

@@ -203,36 +203,6 @@ class History_personal_trainer extends StatelessWidget{
               Container(
                 margin: const EdgeInsets.only(top: 10.0),
               ),
-              Material(
-                child: Container(
-                  height: 120,
-                  width: 600,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.0),
-                    image: DecorationImage(
-                      image: AssetImage("assets/images/legs.jpg"),
-                      fit: BoxFit.cover,
-                      colorFilter: ColorFilter.mode(Colors.grey.withOpacity(0.8), BlendMode.darken),
-                    ),
-                  ),
-                  child: MaterialButton(
-                    onPressed: (){
-                      _showDialog(context);
-                    },
-                    child: Text(
-                      '[PERSONAL TRAINING] | Legs | Wednesday - 18/03/2020 | 10:15min ',
-                      style: TextStyle(
-                          fontSize: 20.0,
-                          color: Colors.white
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.only(top: 10.0),
-              ),
-
             ],
           ),
 

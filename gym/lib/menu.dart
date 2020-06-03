@@ -4,11 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:gym/Beginner.dart';
 import 'package:gym/Intermediate.dart';
+import 'package:gym/help_faq.dart';
 import 'package:gym/ptAccount.dart';
 import 'package:gym/settings.dart';
 import 'package:gym/Advanced.dart';
 import 'package:gym/Login.dart';
-
+import 'package:gym/History.dart';
 
 class menuPage extends StatelessWidget{
 
@@ -86,7 +87,13 @@ class menuPage extends StatelessWidget{
                 ),
                 new ListTile(
                     title: Text('History'),
-                    trailing: Icon(Icons.history)
+                    trailing: Icon(Icons.history),
+                  onTap: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =>  History()),
+                    );
+                  },
                 ),
                 new ListTile(
                   title: Text('Personal Trainer Account'),
@@ -97,7 +104,13 @@ class menuPage extends StatelessWidget{
                 ),
                 new ListTile(
                     title: Text('Help'),
-                    trailing: Icon(Icons.help_outline)
+                    trailing: Icon(Icons.help_outline),
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) =>  HELP_faq()),
+                      );
+                    },
                 ),
 
                 new ListTile(

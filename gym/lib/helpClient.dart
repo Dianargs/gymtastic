@@ -5,6 +5,7 @@ import 'package:gym/settings.dart';
 import 'package:gym/menu.dart';
 import 'package:gym/Login.dart';
 import 'package:gym/ClientList.dart';
+import 'package:gym/help_faq.dart';
 
 class helpClient extends StatelessWidget{
 
@@ -103,7 +104,13 @@ class helpClient extends StatelessWidget{
                 ),
                 new ListTile(
                     title: Text('Help'),
-                    trailing: Icon(Icons.help_outline)
+                    trailing: Icon(Icons.help_outline),
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) =>  HELP_faq()),
+                      );
+                    },
                 ),
 
                 new ListTile(

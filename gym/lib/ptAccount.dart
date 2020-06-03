@@ -12,7 +12,8 @@ import 'package:gym/ClientList.dart';
 import 'package:gym/payCheck.dart';
 import 'package:gym/giveClass.dart';
 import 'package:gym/helpClient.dart';
-
+import 'package:gym/help_faq.dart';
+import 'package:gym/History_personal_trainer.dart';
 
 class ptAccount extends StatelessWidget{
 
@@ -89,7 +90,13 @@ class ptAccount extends StatelessWidget{
                 ),
                 new ListTile(
                     title: Text('History'),
-                    trailing: Icon(Icons.history)
+                    trailing: Icon(Icons.history),
+                  onTap: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =>  History_personal_trainer()),
+                    );
+                  },
                 ),
                 new ListTile(
                   title: Text('Leave Personal Account'),
@@ -123,7 +130,13 @@ class ptAccount extends StatelessWidget{
                 ),
                 new ListTile(
                     title: Text('Help'),
-                    trailing: Icon(Icons.help_outline)
+                    trailing: Icon(Icons.help_outline),
+                  onTap: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =>  HELP_faq()),
+                    );
+                  },
                 ),
                 new ListTile(
                   title: Text('Log out'),
