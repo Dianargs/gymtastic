@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:gym/solo.dart';
+import 'package:gym/request.dart';
 
 class Beginner extends StatelessWidget{
 
@@ -18,13 +20,20 @@ class Beginner extends StatelessWidget{
             new FlatButton(
               child: new Text("Solo"),
               onPressed: () {
-                Navigator.of(context).pop();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) =>  solo()),
+                );
               },
             ),
             new FlatButton(
               child: new Text("Request PT"),
               onPressed: () {
-                Navigator.of(context).pop();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) =>  Request()),
+                );
+
               },
             ),
             new FlatButton(

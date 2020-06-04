@@ -5,6 +5,7 @@ import 'package:gym/newAccount.dart';
 import 'package:gym/Login.dart';
 import 'package:gym/menu.dart';
 import 'package:gym/ptAccount.dart';
+import 'package:gym/request.dart';
 import 'package:gym/settings.dart';
 import 'package:gym/Beginner.dart';
 import 'package:gym/Intermediate.dart';
@@ -15,6 +16,7 @@ import 'package:gym/help_faq.dart';
 import 'package:gym/History.dart';
 import 'package:gym/History_personal_trainer.dart';
 import 'package:gym/One.dart';
+import 'package:gym/request.dart';
 import 'Login.dart';
 
 void main() {
@@ -42,7 +44,8 @@ class MyApp extends StatelessWidget {
         '/HELP_faq' : (BuildContext context) => new HELP_faq(),
         '/History' : (BuildContext context) => new History(),
         '/History_personal_trainer ' : (BuildContext context) => new History_personal_trainer(),
-        '/One' : (BuildContext context) => new One()
+        '/One' : (BuildContext context) => new One(),
+        '/Request' : (BuildContext context) => new Request()
       },
       home: new LoginScreen(),
     );

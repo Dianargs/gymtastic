@@ -57,6 +57,7 @@ flutter:
      - assets/images/Help.jpg
      - assets/images/onlineClass.png
      - assets/images/singleClass.png
+     - assets/images/abdominais.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
