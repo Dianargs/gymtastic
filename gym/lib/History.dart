@@ -4,42 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
 class History extends StatelessWidget{
-
-  @override
-  void _showDialog(BuildContext context) {
-    // flutter defined function
-
-    showDialog(context: context,
-      builder: (BuildContext context) {
-        // return object of type Dialog
-        return AlertDialog(
-          title: new Text("REDO Workout"),
-          content: new Text("Would you like to redo your workout?"),
-          actions: <Widget>[
-            // usually buttons at the bottom of the dialog
-            new FlatButton(
-              child: new Text("Solo"),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-            new FlatButton(
-              child: new Text("Request PT"),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-            new FlatButton(
-              child: new Text("Close"),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      },
-    );
-  }
+  
   final iconMenu  = Row(
     children: <Widget>[
       Icon(
@@ -110,7 +75,6 @@ class History extends StatelessWidget{
                   ),
                   child: MaterialButton(
                     onPressed: (){
-                      _showDialog(context);
                     },
                     child: Text(
                       'Upper Body | Monday - 23/03/2020 | 18:45min ',
@@ -140,7 +104,6 @@ class History extends StatelessWidget{
                   ),
                   child: MaterialButton(
                     onPressed: (){
-                      _showDialog(context);
                     },
                     child: Text(
                       'Upper Body | Friday - 20/03/2020 | 20:15min ',
@@ -169,7 +132,6 @@ class History extends StatelessWidget{
                   ),
                   child: MaterialButton(
                     onPressed: (){
-                      _showDialog(context);
                     },
                     child: Text(
                       'Upper Body | Thursday - 19/03/2020 | 22:18min ',
@@ -198,7 +160,6 @@ class History extends StatelessWidget{
                   ),
                   child: MaterialButton(
                     onPressed: (){
-                      _showDialog(context);
                     },
                     child: Text(
                       'Legs | Wednesday - 18/03/2020 | 10:15min ',

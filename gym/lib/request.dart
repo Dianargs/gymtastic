@@ -104,7 +104,7 @@ class Request extends StatelessWidget{
                   },
                 ),
                 new ListTile(
-                  title: Text('Leave Personal Account'),
+                  title: Text('Leave to Personal Account'),
                   trailing: Icon(Icons.person),
                   onTap: (){
                     Navigator.push(
